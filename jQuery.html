@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="C:\Users\dinesh\Downloads\jquery-2.1.1.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Lab 2</title>
+</head>
+<body>
+  
+  <div id="remove">You can remove this line by clicking</div>
+  <br/>
+  <div id="firstPara">
+    <p id="p1">
+      This is first Paragraph
+    </p>
+    <br/>
+  </div>
+  
+  <div id="secondPara">
+    <p id="p2">
+      This is the second paragraph
+    </p>
+  </div>
+  
+  <br/>
+  
+  <p id="addPara" ></p>
+  
+  <br/>
+  <a id="alinkMetro" class="linkstyle" href="http://www.metropolia.fi">Metropolia</a>
+  <br/>
+  <a id="alinkGoogle" class="linkstyle" href="http://www.google.fi">Google</a>
+  <br/>
+  <br/>
+  <button id="addButton" type="button">Add paragraph</button>
+  <script>
+    $( "#firstPara" ).mouseover(function() {
+        $(this).css("background-color","grey");
+        $("p1").css("color","white");
+    });
+    
+    $( "#p2" ).mouseover(function() {
+        $(this).css("background-color","red");
+    });
+    $( "#p2" ).mouseout(function() {
+        $(this).css("background-color","");
+    });
+    $( "#remove" ).click(function() {
+      $(this).remove( );
+    });
+    $( "#addButton" ).click(function() {
+      $("#addPara").append( "This is the line you added after clicking the button!!" );
+    });
+    $( "#addPara" ).hover(
+      function() {
+        $( this ).append( $( "<span><br/> About to select a link … </span>" ) );
+      }, function() {
+        $( this ).find( "span:last" ).remove();
+      }
+    );
+  </script>
+  
+</body>
+</html>
